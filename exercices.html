@@ -1,1 +1,115 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Exercices corrigés | Génie Civil Maroc</title><link rel="stylesheet" href="style.css"></head><body><header class="navbar"><div class="container nav"><a class="brand" href="index.html">Génie <span>Civil Maroc</span></a><nav class="links"><a href="cours.html">Cours</a><a href="normes.html">Normes</a><a href="outils.html">Outils</a><a href="chantier.html">Chantier</a></nav><button class="menu" onclick="toggleMenu()">☰</button></div></header><section class="pagehero"><div class="container"><div class="eyebrow">S'ENTRAÎNER AU CALCUL</div><h1>Exercices corrigés pas à pas</h1><p>Méthode professionnelle : données → hypothèses → charges → combinaisons → calcul → vérifications → conclusion.</p></div></section><section class="section"><div class="container"><article class="card" style="margin-bottom:24px"><h2>🧱 Exercice 1 — Poutre simplement appuyée</h2><p><strong>Énoncé :</strong> poutre de portée L = 5,00 m soumise à une charge uniformément répartie q = 20 kN/m. Calculer le moment maximal et l'effort tranchant maximal.</p><p><strong>Étape 1 — Modèle :</strong> poutre isostatique simplement appuyée.</p><p><strong>Étape 2 — Effort tranchant :</strong> Vmax = qL/2 = 20×5/2 = <strong>50 kN</strong>.</p><p><strong>Étape 3 — Moment :</strong> Mmax = qL²/8 = 20×5²/8 = <strong>62,50 kN·m</strong>.</p><p><strong>Étape 4 — Suite du dimensionnement :</strong> le ferraillage et les vérifications doivent être réalisés selon le référentiel contractuel applicable et les caractéristiques réelles des matériaux.</p></article><article class="card" style="margin-bottom:24px"><h2>🏢 Exercice 2 — Dalle pleine unidirectionnelle</h2><p><strong>Données :</strong> portée 4,00 m ; charge totale de calcul q = 8 kN/m² ; bande de calcul de 1,00 m.</p><p><strong>Étape 1 :</strong> charge linéaire ql = 8×1 = 8 kN/m.</p><p><strong>Étape 2 :</strong> Mmax = qlL²/8 = 8×16/8 = <strong>16 kN·m/m</strong>.</p><p><strong>Étape 3 :</strong> utiliser ce moment pour déterminer les armatures puis vérifier cisaillement, flèche et dispositions constructives.</p></article><article class="card" style="margin-bottom:24px"><h2>🏗️ Exercice 3 — Semelle isolée : estimation de surface</h2><p><strong>Données :</strong> effort vertical de service N = 900 kN ; contrainte admissible du sol supposée σadm = 200 kN/m².</p><p><strong>Étape 1 :</strong> S = N/σadm = 900/200 = <strong>4,50 m²</strong>.</p><p><strong>Étape 2 :</strong> pour une semelle carrée théorique : a = √4,50 ≈ <strong>2,12 m</strong>.</p><p><strong>Étape 3 :</strong> cette valeur n'est qu'un point de départ ; vérifier ensuite la pression réelle, flexion, cisaillement, poinçonnement et tassements avec les données géotechniques.</p></article><div class="notice"><strong>Note technique :</strong> les exercices sont pédagogiques. Les valeurs de coefficients et les combinaisons définitives doivent être adaptées au règlement et au projet concernés.</div></div></section><footer class="footer"><div class="container">© 2026 Génie Civil Maroc</div></footer><script src="app.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exercices corrigés | Génie Civil Maroc</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navbar"><div class="container nav">
+<a class="brand" href="index.html">Génie <span>Civil Maroc</span></a>
+<nav class="links"><a href="cours.html">Cours</a><a href="exercices.html">Exercices</a><a href="normes.html">Normes</a><a href="outils.html">Outils</a><a href="chantier.html">Chantier</a><a href="notes-de-calcul.html">Notes de calcul</a><a href="emploi.html">Emploi</a></nav>
+<button class="menu" onclick="toggleMenu()">☰</button></div></header>
+
+<section class="exercise-hero"><div class="container exercise-hero-grid">
+<div><div class="breadcrumb">Accueil &nbsp;›&nbsp; Exercices corrigés</div><h1>Exercices <mark>corrigés</mark></h1><p>Des exercices simples, progressifs et détaillés pour apprendre le calcul en Génie Civil selon les méthodes enseignées au Maroc.</p><div class="standards">BAEL 91 modifié 99 • Eurocodes • RPS 2011 • RDM • Pratiques de BET</div></div>
+<div class="practice-box"><div class="practice-icon">🎓</div><div><b>Apprendre par la pratique</b><p>« Un exercice bien compris vaut mieux que plusieurs formules mémorisées. »</p></div></div>
+</div></section>
+
+<section class="exercise-toolbar"><div class="container">
+<div class="filters"><button class="active" onclick="filterCards('all',this)">Tous les exercices</button><button onclick="filterCards('ba',this)">Béton armé</button><button onclick="filterCards('rdm',this)">RDM</button><button onclick="filterCards('geo',this)">Géotechnique</button><button onclick="filterCards('fond',this)">Fondations</button></div>
+<div class="exercise-search"><span>⌕</span><input id="search" oninput="searchResources()" placeholder="Rechercher un exercice : poutre, dalle, semelle..." aria-label="Rechercher"></div>
+</div></section>
+
+<section class="section exercise-section"><div class="container">
+<div class="exercise-intro"><div><span class="eyebrow">MÉTHODE DE RÉSOLUTION</span><h2>Comprendre → Calculer → Vérifier</h2><p>Chaque corrigé suit une démarche claire : données, hypothèses, schéma statique, formules, calcul numérique et conclusion.</p></div><div class="progress-badge">6 exercices<br><strong>à développer</strong></div></div>
+
+<div class="exercise-grid">
+
+<article class="exercise-card" data-cat="ba rdm" data-search>
+<div class="exercise-title"><span>🧱</span><div><h3>Poutre BA simplement appuyée</h3><p>Moment, effort tranchant et introduction au ferraillage.</p></div></div>
+<div class="diagram beam"><div class="loadline">↓ ↓ ↓ ↓ ↓ ↓ ↓</div><div class="beamline"></div><div class="supports"><span>△</span><span>△</span></div><small>L = 5,00 m &nbsp; | &nbsp; q = 20 kN/m</small></div>
+<div class="tags"><span>Béton armé</span><span>RDM</span><span>BAEL</span></div>
+<details><summary>📒 Voir l'exercice corrigé <b>→</b></summary><div class="solution">
+<h4>1. Énoncé</h4><p>Une poutre simplement appuyée de portée <b>L = 5,00 m</b> supporte une charge uniformément répartie <b>q = 20 kN/m</b>. Calculer les réactions, l'effort tranchant maximal et le moment fléchissant maximal.</p>
+<h4>2. Hypothèses</h4><ul><li>Poutre isostatique sur deux appuis simples.</li><li>Charge uniformément répartie sur toute la portée.</li><li>Calcul statique linéaire pour comprendre les efforts internes.</li></ul>
+<h4>3. Réactions aux appuis</h4><div class="formula">RA = RB = q × L / 2 = 20 × 5 / 2 = <b>50 kN</b></div>
+<h4>4. Effort tranchant maximal</h4><div class="formula">Vmax = qL/2 = <b>50 kN</b></div>
+<p>Le cisaillement est maximal au voisinage des appuis et nul au milieu de la travée.</p>
+<h4>5. Moment maximal</h4><div class="formula">Mmax = qL²/8 = 20 × 5² / 8 = <b>62,50 kN·m</b></div>
+<h4>6. Conclusion</h4><p>Pour une véritable poutre BA, la suite consiste à définir la section, les matériaux, les combinaisons ELU/ELS, puis à calculer les armatures longitudinales et transversales suivant le règlement applicable.</p>
+</div></details>
+</article>
+
+<article class="exercise-card" data-cat="ba" data-search>
+<div class="exercise-title"><span>🏢</span><div><h3>Dalle pleine unidirectionnelle</h3><p>Calcul des charges et moment par bande de 1,00 m.</p></div></div>
+<div class="diagram slab"><div class="slab-shape"></div><small>Portée L = 4,00 m</small></div>
+<div class="tags"><span>Béton armé</span><span>Dalles</span><span>Eurocode 2</span></div>
+<details><summary>📒 Voir l'exercice corrigé <b>→</b></summary><div class="solution">
+<h4>1. Données</h4><p>Dalle pleine travaillant dans une seule direction : <b>L = 4,00 m</b>, charge totale de calcul supposée <b>q = 8 kN/m²</b>. On étudie une bande de largeur <b>1,00 m</b>.</p>
+<h4>2. Passage de la charge surfacique à la charge linéaire</h4><div class="formula">q<sub>l</sub> = q × 1,00 = 8 × 1 = <b>8 kN/m</b></div>
+<h4>3. Moment maximal</h4><p>En supposant une dalle simplement appuyée :</p><div class="formula">Mmax = q<sub>l</sub>L²/8 = 8 × 4² / 8 = <b>16 kN·m par mètre</b></div>
+<h4>4. Étapes de dimensionnement</h4><ul><li>Choisir une épaisseur initiale.</li><li>Déterminer la hauteur utile d.</li><li>Calculer l'acier tendu nécessaire.</li><li>Vérifier le cisaillement et la flèche.</li><li>Prévoir les armatures de répartition et les détails constructifs.</li></ul>
+</div></details>
+</article>
+
+<article class="exercise-card" data-cat="ba" data-search>
+<div class="exercise-title"><span>🏛️</span><div><h3>Poteau en béton armé</h3><p>Comprendre l'effort normal et le principe du ferraillage.</p></div></div>
+<div class="diagram column"><div class="col-arrow">↓ N</div><div class="col-shape"></div><small>Section 30 × 30 cm</small></div>
+<div class="tags"><span>Béton armé</span><span>Poteaux</span><span>ELU</span></div>
+<details><summary>📒 Voir l'exercice corrigé <b>→</b></summary><div class="solution">
+<h4>1. Données simplifiées</h4><p>Poteau de section carrée <b>30 × 30 cm</b> soumis à un effort normal de calcul <b>N = 900 kN</b>.</p>
+<h4>2. Surface de la section</h4><div class="formula">A = 0,30 × 0,30 = <b>0,09 m² = 90 000 mm²</b></div>
+<h4>3. Contrainte moyenne indicative</h4><div class="formula">σ = N/A = 900 / 0,09 = <b>10 000 kN/m² = 10 MPa</b></div>
+<h4>4. Vérifications réelles à réaliser</h4><ul><li>Résistance en compression suivant la norme applicable.</li><li>Excentricités et moments éventuels.</li><li>Élancement et effets du second ordre.</li><li>Armatures longitudinales minimales et maximales.</li><li>Cadres et confinement.</li></ul>
+<p><b>Attention :</b> un poteau réel ne se dimensionne jamais uniquement avec σ = N/A.</p>
+</div></details>
+</article>
+
+<article class="exercise-card" data-cat="fond geo" data-search>
+<div class="exercise-title"><span>🏗️</span><div><h3>Semelle isolée</h3><p>Surface nécessaire à partir de la contrainte admissible du sol.</p></div></div>
+<div class="diagram footing"><div class="foot-col"></div><div class="foot-base"></div><small>N = 900 kN &nbsp; | &nbsp; σadm = 200 kN/m²</small></div>
+<div class="tags"><span>Fondations</span><span>Géotechnique</span><span>EC7</span></div>
+<details><summary>📒 Voir l'exercice corrigé <b>→</b></summary><div class="solution">
+<h4>1. Données</h4><p>Effort vertical de service : <b>N = 900 kN</b>. Contrainte admissible du sol supposée : <b>σ<sub>adm</sub> = 200 kN/m²</b>.</p>
+<h4>2. Surface minimale théorique</h4><div class="formula">S = N / σ<sub>adm</sub> = 900 / 200 = <b>4,50 m²</b></div>
+<h4>3. Semelle carrée théorique</h4><div class="formula">a = √S = √4,50 = <b>2,12 m</b></div>
+<p>On peut adopter provisoirement une dimension supérieure, par exemple 2,20 × 2,20 m, puis recalculer avec les charges complètes.</p>
+<h4>4. Vérifications indispensables</h4><ul><li>Pression réelle sous semelle.</li><li>Flexion de la semelle.</li><li>Cisaillement et poinçonnement.</li><li>Tassements selon l'étude géotechnique.</li><li>Combinaisons et données de sol du projet.</li></ul>
+</div></details>
+</article>
+
+<article class="exercise-card" data-cat="rdm" data-search>
+<div class="exercise-title"><span>📐</span><div><h3>RDM — Poutre et charges</h3><p>Diagrammes des efforts internes sur une poutre simple.</p></div></div>
+<div class="diagram beam"><div class="pointload">↓ P = 20 kN</div><div class="loadline">q = 10 kN/m</div><div class="beamline"></div><div class="supports"><span>△</span><span>△</span></div><small>L = 6,00 m</small></div>
+<div class="tags"><span>RDM</span><span>Statique</span><span>Flexion</span></div>
+<details><summary>📒 Voir l'exercice corrigé <b>→</b></summary><div class="solution">
+<h4>1. Données</h4><p>Poutre simplement appuyée de 6 m, chargée par une charge répartie <b>q = 10 kN/m</b> sur toute la portée et une charge ponctuelle <b>P = 20 kN</b> placée au milieu.</p>
+<h4>2. Charge totale</h4><div class="formula">Q = qL = 10 × 6 = <b>60 kN</b></div><div class="formula">Total = Q + P = 60 + 20 = <b>80 kN</b></div>
+<h4>3. Réactions</h4><p>Le chargement est symétrique :</p><div class="formula">RA = RB = 80/2 = <b>40 kN</b></div>
+<h4>4. Principe des diagrammes</h4><p>On détermine ensuite l'effort tranchant V(x) puis le moment M(x). Le maximum du moment se situe là où l'effort tranchant change de signe.</p>
+</div></details>
+</article>
+
+<article class="exercise-card" data-cat="geo fond" data-search>
+<div class="exercise-title"><span>⛰️</span><div><h3>Géotechnique — Pression du sol</h3><p>Capacité portante, tassement et démarche d'étude.</p></div></div>
+<div class="diagram soil"><div class="soil-line"></div><div class="soil-foot"></div><div class="arrows">↑ ↑ ↑ ↑ ↑</div><small>σ<sub>sol</sub> = N / S</small></div>
+<div class="tags"><span>Géotechnique</span><span>Fondations</span><span>Essais de sol</span></div>
+<details><summary>📒 Voir l'exercice corrigé <b>→</b></summary><div class="solution">
+<h4>1. Objectif</h4><p>Vérifier que la pression transmise au terrain reste compatible avec les caractéristiques fournies par l'étude géotechnique.</p>
+<h4>2. Formule simplifiée</h4><div class="formula">σ<sub>sol</sub> = N / S</div>
+<h4>3. Exemple</h4><p>Pour N = 800 kN et S = 4,00 m² :</p><div class="formula">σ<sub>sol</sub> = 800/4 = <b>200 kN/m²</b></div>
+<h4>4. Interprétation</h4><p>Cette pression doit être comparée à la valeur et à la méthode de vérification spécifiées par l'étude géotechnique et le règlement utilisé. Il faut aussi analyser les tassements.</p>
+</div></details>
+</article>
+
+</div>
+<div class="notice exercise-notice"><strong>⚠️ Important :</strong> ces exercices sont pédagogiques et simplifiés. Pour un projet réel au Maroc, les hypothèses, combinaisons, coefficients, matériaux et données géotechniques doivent être vérifiés dans les documents contractuels et réglementaires applicables.</div>
+</div></section>
+
+<section class="section white"><div class="container"><div class="head"><span class="eyebrow">PROGRESSION</span><h2>Que veux-tu apprendre ensuite ?</h2></div><div class="grid"><a class="card" href="cours.html"><div class="icon">📚</div><h3>Revoir les cours</h3><p>Comprendre les notions avant de résoudre les exercices.</p></a><a class="card" href="outils.html"><div class="icon">🧮</div><h3>Utiliser les outils</h3><p>Vérifier rapidement des calculs de prédimensionnement.</p></a><a class="card" href="notes-de-calcul.html"><div class="icon">📄</div><h3>Voir les notes de calcul</h3><p>Découvrir une démarche proche d'un bureau d'études.</p></a></div></div></section>
+
+<footer class="footer"><div class="container"><div class="footergrid"><div><h3>Génie Civil Maroc</h3><p>Une plateforme de partage et d'apprentissage pour les étudiants et professionnels du Génie Civil.</p></div><div><h3>Apprendre</h3><a href="cours.html">Cours</a><a href="exercices.html">Exercices</a><a href="formations.html">Formations</a></div><div><h3>Pratiquer</h3><a href="outils.html">Calculateurs</a><a href="chantier.html">Guide chantier</a><a href="notes-de-calcul.html">Notes de calcul</a></div></div><div class="copyright">© 2026 Génie Civil Maroc — Plateforme pédagogique.</div></div></footer>
+<script src="app.js"></script>
+</body></html>
