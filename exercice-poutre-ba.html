@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exercice complet : Poutre BA | Génie Civil Maroc</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.exercise-layout{display:grid;grid-template-columns:minmax(0,2fr) 330px;gap:28px}.toc{position:sticky;top:95px;align-self:start;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px}.toc a{display:block;padding:8px 0;color:var(--muted);font-weight:700}.toc a:hover{color:var(--ink)}.step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;margin-bottom:18px}.step-number{display:inline-flex;width:38px;height:38px;align-items:center;justify-content:center;background:var(--yellow);border-radius:50%;font-weight:900;margin-right:10px}.calc-box{background:#fffbe5;border-left:5px solid var(--yellow);padding:18px;border-radius:8px;margin:15px 0}.answer{background:#16181c;color:#fff;padding:18px;border-radius:12px;margin-top:18px}.answer b{color:#ffd83d}.table-small{width:100%;border-collapse:collapse;margin:12px 0}.table-small td,.table-small th{border:1px solid var(--line);padding:10px;text-align:left}.table-small th{background:#f7f7f7}.next-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}@media(max-width:900px){.exercise-layout{grid-template-columns:1fr}.toc{position:relative;top:0}.next-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="navbar"><div class="container nav">
+<a class="brand" href="index.html">Génie <span>Civil Maroc</span></a>
+<nav class="links"><a href="cours.html">Cours</a><a href="exercices.html">Exercices</a><a href="normes.html">Normes</a><a href="outils.html">Outils</a><a href="chantier.html">Chantier</a><a href="notes-de-calcul.html">Notes de calcul</a></nav>
+<button class="menu" onclick="toggleMenu()">☰</button></div></header>
+
+<section class="pagehero"><div class="container">
+<div class="breadcrumb">Accueil › Exercices › Béton armé › Poutre</div>
+<div class="eyebrow">EXERCICE COMPLET CORRIGÉ</div>
+<h1>🧱 Dimensionnement d'une poutre en béton armé</h1>
+<p>Exemple pédagogique détaillé : prédimensionnement → charges → combinaison ELU → efforts → ferraillage → cisaillement → vérifications → dispositions constructives.</p>
+<div class="standards">Référence pédagogique : BAEL 91 modifié 99 • notions compatibles avec une démarche EC2 à adapter selon le projet</div>
+</div></section>
+
+<section class="section"><div class="container exercise-layout">
+<main>
+<div class="notice"><strong>⚠️ Cadre pédagogique :</strong> cet exercice utilise des données volontairement simplifiées. Dans une note de calcul réelle, les charges, combinaisons, coefficients et vérifications doivent être établis suivant le règlement contractuel applicable au projet.</div>
+
+<section class="step" id="enonce"><h2><span class="step-number">1</span>Énoncé du problème</h2>
+<p>On souhaite dimensionner une poutre rectangulaire simplement appuyée en béton armé de portée <strong>L = 5,00 m</strong>.</p>
+<table class="table-small"><tr><th>Donnée</th><th>Valeur retenue</th></tr><tr><td>Portée entre appuis</td><td>5,00 m</td></tr><tr><td>Largeur b</td><td>25 cm</td></tr><tr><td>Hauteur totale h</td><td>50 cm</td></tr><tr><td>Hauteur utile d</td><td>45 cm (hypothèse)</td></tr><tr><td>Béton</td><td>f<sub>c28</sub> = 25 MPa</td></tr><tr><td>Acier</td><td>FeE 500 MPa</td></tr><tr><td>Charges permanentes G</td><td>12 kN/m</td></tr><tr><td>Charges d'exploitation Q</td><td>8 kN/m</td></tr></table>
+<p><strong>Objectif :</strong> déterminer les sollicitations principales et proposer un ferraillage longitudinal pédagogique.</p></section>
+
+<section class="step" id="schema"><h2><span class="step-number">2</span>Hypothèses et schéma statique</h2>
+<ul><li>Poutre isostatique sur deux appuis simples.</li><li>Charges uniformément réparties sur toute la portée.</li><li>La poutre travaille principalement en flexion simple.</li><li>Les données géométriques et mécaniques sont supposées connues.</li></ul>
+<div class="calc-box"><strong>Schéma :</strong><br><br>▲ ───────────────────────── ▲<br><span style="display:inline-block;width:100%;text-align:center">L = 5,00 m</span><br>↓ ↓ ↓ ↓ ↓ ↓ charge uniformément répartie</div>
+</section>
+
+<section class="step" id="charges"><h2><span class="step-number">3</span>Descente de charges et combinaison ELU</h2>
+<p>Les charges caractéristiques retenues sont :</p><div class="formula">G = 12 kN/m &nbsp;&nbsp; et &nbsp;&nbsp; Q = 8 kN/m</div>
+<p>Pour cet exemple pédagogique, on utilise la combinaison ELU :</p>
+<div class="calc-box"><strong>q<sub>ELU</sub> = 1,35G + 1,50Q</strong><br>q<sub>ELU</sub> = 1,35 × 12 + 1,50 × 8<br><strong>q<sub>ELU</sub> = 28,20 kN/m</strong></div>
+<p>Cette charge de calcul sera utilisée pour déterminer le moment maximal et l'effort tranchant maximal.</p></section>
+
+<section class="step" id="efforts"><h2><span class="step-number">4</span>Calcul des efforts internes</h2>
+<h3>4.1 Réactions aux appuis</h3><div class="formula">R<sub>A</sub> = R<sub>B</sub> = qL/2 = 28,20 × 5 / 2 = <strong>70,50 kN</strong></div>
+<h3>4.2 Effort tranchant maximal</h3><div class="formula">V<sub>max</sub> = qL/2 = <strong>70,50 kN</strong></div>
+<h3>4.3 Moment fléchissant maximal</h3><div class="calc-box"><strong>M<sub>max</sub> = qL²/8</strong><br>M<sub>Ed</sub> = 28,20 × 5² / 8<br><strong>M<sub>Ed</sub> = 88,13 kN·m</strong></div>
+<div class="answer">Résultat principal : <b>M<sub>Ed</sub> ≈ 88,13 kN·m</b> et <b>V<sub>Ed</sub> ≈ 70,50 kN</b>.</div></section>
+
+<section class="step" id="section"><h2><span class="step-number">5</span>Vérification géométrique et hauteur utile</h2>
+<p>On a adopté une section de <strong>25 × 50 cm</strong>. Pour un premier calcul pédagogique, on prend :</p><div class="formula">d = 45 cm = 450 mm</div>
+<p>Cette valeur dépend en pratique de l'enrobage, du diamètre des cadres et du diamètre des armatures longitudinales.</p>
+<div class="calc-box"><strong>Conseil BET :</strong> ne jamais confondre la hauteur totale h avec la hauteur utile d. Le calcul de flexion est principalement réalisé avec d.</div></section>
+
+<section class="step" id="acier"><h2><span class="step-number">6</span>Calcul simplifié des armatures longitudinales</h2>
+<p>Pour une première estimation pédagogique d'une section simplement armée, on peut prendre un bras de levier approché :</p><div class="formula">z ≈ 0,90d = 0,90 × 450 = <strong>405 mm</strong></div>
+<p>Avec un acier de limite d'élasticité nominale de 500 MPa et une valeur de calcul simplifiée :</p><div class="formula">f<sub>yd</sub> ≈ 500 / 1,15 = <strong>435 MPa</strong></div>
+<p>La section d'acier estimée est alors :</p><div class="calc-box"><strong>A<sub>s,req</sub> = M<sub>Ed</sub> / (f<sub>yd</sub> × z)</strong><br>A<sub>s,req</sub> = 88,13 × 10<sup>6</sup> / (435 × 405)<br><strong>A<sub>s,req</sub> ≈ 500 mm² = 5,00 cm²</strong></div>
+<h3>Choix pratique des barres</h3><div class="formula">3 HA16 → A<sub>s,prov</sub> = 3 × 2,01 = <strong>6,03 cm²</strong></div>
+<div class="answer">Proposition pédagogique : <b>3 HA16 en nappe tendue</b>, sous réserve des vérifications réglementaires complètes et des dispositions constructives.</div></section>
+
+<section class="step" id="cisaillement"><h2><span class="step-number">7</span>Vérification simplifiée au cisaillement</h2>
+<p>Contrainte de cisaillement moyenne :</p><div class="formula">τ = V<sub>Ed</sub> / (b × d)</div><div class="calc-box">τ = 70 500 / (250 × 450)<br><strong>τ ≈ 0,63 MPa</strong></div>
+<p>Cette valeur doit être comparée à la résistance réglementaire au cisaillement correspondant au béton, au taux d'armatures et au règlement réellement utilisé.</p>
+<p>Des <strong>cadres transversaux</strong> restent généralement nécessaires suivant les dispositions minimales et le calcul réglementaire.</p></section>
+
+<section class="step" id="service"><h2><span class="step-number">8</span>Vérifications à l'état limite de service</h2>
+<ul><li><strong>Flèche :</strong> vérification de la déformabilité selon la méthode réglementaire applicable.</li><li><strong>Fissuration :</strong> contrôle selon la classe d'exposition et les exigences du projet.</li><li><strong>Contraintes :</strong> si le référentiel de calcul l'exige.</li></ul>
+<div class="calc-box">Contrôle indicatif de finesse : L/d = 5000/450 = <strong>11,1</strong>. Ce rapport seul ne constitue pas une justification complète de la flèche.</div></section>
+
+<section class="step" id="ferraillage"><h2><span class="step-number">9</span>Disposition pratique du ferraillage</h2>
+<h3>Proposition pédagogique</h3><ul><li>Nappe inférieure : 3 HA16 (à confirmer après calcul complet).</li><li>Armatures supérieures : armatures constructives ou calculées selon les conditions d'appui et les moments.</li><li>Cadres : diamètre, espacement et resserrement près des appuis à déterminer par calcul et dispositions réglementaires.</li><li>Enrobage : à définir selon l'environnement et la classe d'exposition du projet.</li></ul>
+<div class="notice"><strong>Conseil chantier :</strong> avant bétonnage, contrôler le diamètre et le nombre des barres, les espacements, l'enrobage, les recouvrements, les ancrages et la rigidité des cadres.</div></section>
+
+<section class="step" id="conclusion"><h2><span class="step-number">10</span>Conclusion de l'exercice</h2>
+<p>La démarche complète suivie est :</p><div class="calc-box"><strong>Données → Schéma statique → Charges → Combinaisons → M<sub>Ed</sub> et V<sub>Ed</sub> → Section → Armatures → Cisaillement → ELS → Détails constructifs</strong></div>
+<p>Dans cet exemple, la section 25 × 50 cm conduit à un besoin simplifié d'environ <strong>5,00 cm² d'acier tendu</strong>. Une proposition pédagogique de <strong>3 HA16</strong> fournit environ <strong>6,03 cm²</strong>, mais la solution finale doit toujours être confirmée par une note de calcul réglementaire complète.</p></section>
+</main>
+
+<aside class="toc"><div class="eyebrow">SOMMAIRE</div><a href="#enonce">1. Énoncé</a><a href="#schema">2. Hypothèses</a><a href="#charges">3. Charges ELU</a><a href="#efforts">4. Efforts internes</a><a href="#section">5. Géométrie</a><a href="#acier">6. Ferraillage</a><a href="#cisaillement">7. Cisaillement</a><a href="#service">8. ELS</a><a href="#ferraillage">9. Détails</a><a href="#conclusion">10. Conclusion</a><hr><a class="btn" href="exercices.html">← Tous les exercices</a></aside>
+</div></section>
+
+<section class="section white"><div class="container"><div class="head"><div class="eyebrow">CONTINUER À APPRENDRE</div><h2>Prochains exercices à développer</h2></div><div class="next-grid"><a class="card" href="exercices.html"><h3>🏢 Dalle pleine</h3><p>Charges, moments, ferraillage et vérifications de service.</p></a><a class="card" href="exercices.html"><h3>🏛️ Poteau BA</h3><p>Effort normal, élancement et armatures longitudinales.</p></a><a class="card" href="exercices.html"><h3>🏗️ Semelle isolée</h3><p>Pression du sol, flexion, cisaillement et poinçonnement.</p></a></div></div></section>
+<footer class="footer"><div class="container"><div class="copyright">© 2026 Génie Civil Maroc — Ressource pédagogique pour étudiants et ingénieurs.</div></div></footer>
+<script src="app.js"></script>
+</body></html>
